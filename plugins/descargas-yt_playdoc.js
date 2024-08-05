@@ -22,7 +22,7 @@ const yt = await yta(v);
 const ttl = await yt.title;
 const size = await bytesToSize(yt.size);
 let cap = `╭━❰  ${wm}  ❱━⬣\n┃📥 𝙔𝙊𝙐𝙏𝙐𝘽𝙀 𝘿𝙇 📥\n┃ও *${mid.smsYT1}:* \n┃» ${ttl}\n┃﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘\n┃ও *${mid.smsYT11}:*\n┃» ${size}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`.trim()
-await conn.sendMessage(m.chat, { document: { url: yt.dlink }, fileName: ttl + '.mp3', caption: cap, mimetype: 'audio/mpeg', contextInfo: {
+await conn.sendMessage(m.chat, { document: yt.buffer, fileName: ttl + '.mp3', caption: cap, mimetype: 'audio/mpeg', contextInfo: {
 externalAdReply: {
 title: ttl,
 body: "",
@@ -73,7 +73,7 @@ const v = yt_play[0].url;
 const yt = await ytv(v);
 const ttl = await yt.title;
 const size = await bytesToSize(yt.size);
-await conn.sendMessage(m.chat, { document: { url: yt.dlink }, caption: `╭━❰  ${wm}  ❱━⬣\n┃📥 𝙔𝙊𝙐𝙏𝙐𝘽𝙀 𝘿𝙇 📥\n┃ও *${mid.smsYT1}:* \n┃» ${ttl}\n┃﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘\n┃ও *${mid.smsYT11}:*\n┃» ${size}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', contextInfo: {
+await conn.sendMessage(m.chat, { document: yt.buffer, caption: `╭━❰  ${wm}  ❱━⬣\n┃📥 𝙔𝙊𝙐𝙏𝙐𝘽𝙀 𝘿𝙇 📥\n┃ও *${mid.smsYT1}:* \n┃» ${ttl}\n┃﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘﹘\n┃ও *${mid.smsYT11}:*\n┃» ${size}\n╰━━━━━❰ *𓃠 ${vs}* ❱━━━━⬣`, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', contextInfo: {
 externalAdReply: {
 title: ttl,
 body: "",
