@@ -16,7 +16,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command}) => {
 
 		if (media?.images?.[0]) {
 			for (let image of media.images) {
-				conn.sendFile(m.chat, image.link, 'tiktok.jpeg', `${description ? `\n⛱️ ${mid.smsYT14}\n*${description}*` : ''}\n${wm}`.trim(), m);
+				await conn.sendMessage(m.chat, { image: { url: image.link }, caption: `${description ? `\n⛱️ ${mid.smsYT14}\n*${description}*` : ''}\n${wm}`.trim() }, { quoted: m });
 			}
 		} else {
 				await conn.sendMessage(m.chat, { video: { url: media.video[0].link }, caption: `${description ? `\n⛱️ ${mid.smsYT14}\n*${description}*` : ''}\n${wm}`.trim() }, { quoted: m });
